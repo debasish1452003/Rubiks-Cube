@@ -6,11 +6,6 @@ CornerDBMaker::CornerDBMaker(string _fileName)
     fileName = _fileName;
 }
 
-CornerDBMaker::CornerDBMaker(string _fileName)
-{
-    fileName = _fileName;
-}
-
 CornerDBMaker::CornerDBMaker(string _fileName, uint8_t init_val)
 {
     fileName = _fileName;

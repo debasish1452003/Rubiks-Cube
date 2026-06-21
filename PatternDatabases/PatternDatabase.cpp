@@ -49,6 +49,11 @@ size_t PatternDatabase::getNumItems() const
     return this->numItems;
 }
 
+bool PatternDatabase::isFull() const
+{
+    return this->numItems == this->size;
+}
+
 void PatternDatabase::toFile(const string &filePath) const
 {
     ofstream writer(filePath, ios::out | ios::binary | ios::trunc);

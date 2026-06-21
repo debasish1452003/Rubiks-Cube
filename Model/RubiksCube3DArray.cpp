@@ -1,3 +1,6 @@
+#ifndef RUBIKS_CUBE_SOLVER_RUBIKSCUBE3DARRAY_CPP
+#define RUBIKS_CUBE_SOLVER_RUBIKSCUBE3DARRAY_CPP
+
 #include "RubiksCube.h"
 
 class RubiksCube3dArray : public RubiksCube
@@ -227,23 +230,23 @@ public:
         char temp_arr[3] = {};
         for (int i = 0; i < 3; i++)
         {
-            temp_arr[i] = cube[0][2 - i][2];
+            temp_arr[i] = cube[0][i][2];
         }
         for (int i = 0; i < 3; i++)
         {
-            cube[0][2 - i][2] = cube[2][2 - i][2];
+            cube[0][i][2] = cube[2][i][2];
         }
         for (int i = 0; i < 3; i++)
         {
-            cube[2][2 - i][2] = cube[5][2 - i][2];
+            cube[2][i][2] = cube[5][i][2];
         }
         for (int i = 0; i < 3; i++)
         {
-            cube[5][2 - i][2] = cube[4][i][2];
+            cube[5][i][2] = cube[4][2 - i][0];
         }
         for (int i = 0; i < 3; i++)
         {
-            cube[4][i][2] = temp_arr[i];
+            cube[4][2 - i][0] = temp_arr[i];
         }
 
         return *this;
@@ -297,6 +300,14 @@ public:
     RubiksCube &bPrime() override
     {
         this->b();
+        this->b();
+        this->b();
+
+        return *this;
+    }
+
+    RubiksCube &b2() override
+    {
         this->b();
         this->b();
 
@@ -401,3 +412,5 @@ struct Hasd3d
         return hash<string>()(str);
     }
 };
+
+#endif

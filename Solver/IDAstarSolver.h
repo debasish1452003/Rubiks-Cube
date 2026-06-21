@@ -14,7 +14,7 @@ private:
     CornerPatternDatabase cornerDB;
     vector<RubiksCube::MOVE> moves;
     unordered_map<T, RubiksCube::MOVE, H> move_done;
-    unordered_map<T, bool, H> visted;
+    unordered_map<T, bool, H> visited;
 
     struct Node
     {

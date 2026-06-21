@@ -1,0 +1,10 @@
+# Build artifacts
+*.exe
+*.o
+solver
+tests
+benchmark
+
+# Generated pattern database (regenerate with `./solver makedb`)
+Databases/
+*.bin

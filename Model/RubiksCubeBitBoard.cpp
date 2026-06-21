@@ -1,3 +1,6 @@
+#ifndef RUBIKS_CUBE_SOLVER_RUBIKSCUBEBITBOARD_CPP
+#define RUBIKS_CUBE_SOLVER_RUBIKSCUBEBITBOARD_CPP
+
 #include "RubiksCube.h"
 
 class RubiksCubeBitboard : public RubiksCube
@@ -229,10 +232,10 @@ public:
 
         this->rotateSide(0, 2, 3, 4, 2, 2, 3, 4);
         this->rotateSide(2, 2, 3, 4, 5, 2, 3, 4);
-        this->rotateSide(5, 2, 3, 4, 4, 7, 6, 0);
+        this->rotateSide(5, 2, 3, 4, 4, 6, 7, 0);
 
-        bitboard[4] = (bitboard[4] & ~(one_8 << (8 * 7))) | (clr1 << (8 * 7));
-        bitboard[4] = (bitboard[4] & ~(one_8 << (8 * 6))) | (clr2 << (8 * 6));
+        bitboard[4] = (bitboard[4] & ~(one_8 << (8 * 6))) | (clr1 << (8 * 6));
+        bitboard[4] = (bitboard[4] & ~(one_8 << (8 * 7))) | (clr2 << (8 * 7));
         bitboard[4] = (bitboard[4] & ~(one_8 << (8 * 0))) | (clr3 << (8 * 0));
 
         return *this;
@@ -430,3 +433,5 @@ struct HashBitBoard
         return (size_t)final_hash;
     }
 };
+
+#endif

@@ -14,7 +14,7 @@ class CornerPatternDatabase : public PatternDatabase
 public:
     CornerPatternDatabase();
     CornerPatternDatabase(uint8_t init_val);
-    uint32_t getDatabaseIndex(const RubiksCube &cube) const;
-}
+    uint32_t getDatabaseIndex(const RubiksCube &cube) const override;
+};
 
 #endif
